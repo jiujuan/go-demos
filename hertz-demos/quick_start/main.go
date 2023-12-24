@@ -10,10 +10,14 @@ import (
 )
 
 func main() {
+	// Default() 默认地址和端口：http://127.0.0.1:8888
+
+	// 还可以设置地址和端口，server.WithHostPorts("127.0.0.1:8080")，
+	// 加入到 Default(server.WithHostPorts("127.0.0.1:8080"))
 	h := server.Default()
 
-	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
-		ctx.JSON(consts.StatusOK, utils.H{"message": "pong"})
+	h.GET("/ping", func(ctx context.Context, c *app.RequestContext) {
+		c.JSON(consts.StatusOK, utils.H{"message": "pong"})
 	})
 
 	h.Spin()
