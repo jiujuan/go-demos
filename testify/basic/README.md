@@ -1,5 +1,7 @@
+vscode 编辑器下点击运行测试按钮：
 ```
-go test
-
-ok  	testify/basic	0.359s
+=== RUN   TestSomething
+--- PASS: TestSomething (0.00s)
+PASS
+ok      testify/basic   0.308s
 ```
